@@ -16,6 +16,9 @@ const todoData = [];
       <button type="submit">Search</button>
     </div>
   </header>
+
+  <main>
+  </main>
 </template>
 
 <style scoped>
@@ -23,6 +26,16 @@ header {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
 
 div#logo {
