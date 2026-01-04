@@ -21,7 +21,6 @@ const todoData = [];
 <style scoped>
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
