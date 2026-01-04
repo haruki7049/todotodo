@@ -41,6 +41,9 @@
             # Nix
             programs.nixfmt.enable = true;
 
+            # Prettier
+            programs.prettier.enable = true;
+
             # GitHub Actions
             programs.actionlint.enable = true;
           };
