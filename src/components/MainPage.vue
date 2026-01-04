@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-const todoData = [];
+const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
 </script>
 
 <template>
@@ -18,6 +18,13 @@ const todoData = [];
   </header>
 
   <main>
+
+    <ul>
+      <li v-for="item in todoData">
+        {{ item.memo }}
+      </li>
+    </ul>
+
   </main>
 </template>
 
