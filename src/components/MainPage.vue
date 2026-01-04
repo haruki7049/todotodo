@@ -22,6 +22,7 @@ const todoData = [];
 header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 div#logo {
