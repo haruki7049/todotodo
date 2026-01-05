@@ -8,7 +8,7 @@ const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
   <header>
     <div id="logo">
       <h1>TODOTODO</h1>
-      <img src="../assets/vue.svg">
+      <img src="../assets/vue.svg" />
     </div>
 
     <div id="searchTextBox">
@@ -18,12 +18,10 @@ const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
   </header>
 
   <main>
-
     <ul>
       <li v-for="item in todoData">
         {{ item.memo }}
       </li>
     </ul>
-
   </main>
 </template>
