@@ -36,9 +36,6 @@ function addTodo() {
 }
 
 function removeTodo(index) {
-  console.log(index);
-  console.log(todoData.value);
-
   todoData.value.splice(index, 1);
 
   // Re-set todoData after deleting the data
