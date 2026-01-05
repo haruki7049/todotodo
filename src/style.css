@@ -69,16 +69,26 @@ main ul {
   gap: 0.5em;
 }
 
+main ul .deleteButton {
+  padding: 0px 5px;
+}
+
 main li {
-  display: block;
-  font-size: 1.5em;
+  display: flex;
   padding: 0.25em;
+  gap: 0.5em;
 
   border-radius: 8px;
   border: 1px solid transparent;
   background-color: #404040;
 
   overflow-wrap: anywhere;
+}
+
+main li p {
+  margin: 0px 1px;
+  font-size: 1.5em;
+  justify-self: center;
 }
 
 a {

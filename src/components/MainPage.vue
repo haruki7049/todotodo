@@ -10,6 +10,10 @@ function addTodo() {
     text.value = "";
   }
 }
+
+function removeTodo(index) {
+  todoData.value.splice(index, 1);
+}
 </script>
 
 <template>
@@ -38,8 +42,9 @@ function addTodo() {
     </div>
 
     <ul>
-      <li v-for="item in todoData">
-        {{ item.memo }}
+      <li v-for="(item, index) in todoData" :key="index">
+        <button class="deleteButton" @click="removeTodo(index)">×</button>
+        <p>{{ item.memo }}</p>
       </li>
     </ul>
   </main>
