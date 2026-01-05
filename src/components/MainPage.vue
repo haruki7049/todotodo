@@ -1,18 +1,36 @@
 <script setup>
 import { ref } from "vue";
 
-const todoData = ref([]);
+var jsonData;
+try {
+  jsonData = JSON.parse(localStorage.getItem("todoData"));
+} catch (error) {
+  console.warn(error);
+  console.warn("Sets an empty array...");
+  jsonData = [];
+}
+
 const text = ref("");
+const todoData = ref(jsonData);
 
 function addTodo() {
   if (text.value.trim() !== "") {
     todoData.value.push({ memo: text.value });
     text.value = "";
+
+    // Re-set todoData after adding the data
+    localStorage.setItem("todoData", JSON.stringify(todoData.value));
   }
 }
 
 function removeTodo(index) {
+  console.log(index);
+  console.log(todoData.value);
+
   todoData.value.splice(index, 1);
+
+  // Re-set todoData after deleting the data
+  localStorage.setItem("todoData", JSON.stringify(todoData.value));
 }
 </script>
 
