@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 let jsonData;
 try {
@@ -18,7 +18,14 @@ try {
 }
 
 const text = ref("");
+const searchQuery = ref("");
 const todoData = ref(jsonData);
+
+const filteredTodoData = computed(() => {
+  return todoData.value.filter((item) => {
+    return item.memo.includes(searchQuery.value);
+  });
+});
 
 function addTodo() {
   // Prevent submission during IME composition
@@ -36,10 +43,16 @@ function addTodo() {
 }
 
 function removeTodo(index) {
-  todoData.value.splice(index, 1);
+  // Find the actual item from filtered list and remove it from original data
+  const itemToRemove = filteredTodoData.value[index];
+  const actualIndex = todoData.value.indexOf(itemToRemove);
 
-  // Re-set todoData after deleting the data
-  localStorage.setItem("todoData", JSON.stringify(todoData.value));
+  if (actualIndex !== -1) {
+    todoData.value.splice(actualIndex, 1);
+
+    // Re-set todoData after deleting the data
+    localStorage.setItem("todoData", JSON.stringify(todoData.value));
+  }
 }
 </script>
 
@@ -51,8 +64,7 @@ function removeTodo(index) {
     </div>
 
     <div id="searchTextBox">
-      <input type="text" name="search" placeholder="Search..." />
-      <button type="submit">Search</button>
+      <input type="text" name="search" v-model="searchQuery" placeholder="Search..." />
     </div>
   </header>
 
@@ -69,7 +81,7 @@ function removeTodo(index) {
     </div>
 
     <ul>
-      <li v-for="(item, index) in todoData" :key="index">
+      <li v-for="(item, index) in filteredTodoData" :key="index">
         <button class="deleteButton" @click="removeTodo(index)">×</button>
         <p>{{ item.memo }}</p>
       </li>
