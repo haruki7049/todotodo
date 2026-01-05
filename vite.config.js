@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig((command, mode, isSsrBuild, isPreview) => {
   let base = "/";
 
-  if (mode === "build") {
+  if (command === "build") {
     base = "/todotodo";
   }
 
