@@ -8,7 +8,8 @@ try {
   if (!Array.isArray(jsonData)) {
     console.warn("jsonData is not an array");
     console.warn("Sets an empty array...");
-    localStorage.setItem("todoData", JSON.stringify([]));
+    jsonData = [];
+    localStorage.setItem("todoData", JSON.stringify(jsonData));
   }
 } catch (error) {
   console.warn(error);
