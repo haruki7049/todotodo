@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-var jsonData;
+let jsonData;
 try {
   jsonData = JSON.parse(localStorage.getItem("todoData"));
 } catch (error) {
