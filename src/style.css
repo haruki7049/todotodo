@@ -68,10 +68,11 @@ main li {
   font-size: 1.5em;
   padding: 0.25em;
 
-
   border-radius: 8px;
   border: 1px solid transparent;
   background-color: #404040;
+
+  overflow-wrap: anywhere;
 }
 
 a {
