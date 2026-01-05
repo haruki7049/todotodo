@@ -2,12 +2,12 @@
 import { ref } from "vue";
 
 const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
-const text = ref("")
+const text = ref("");
 
 function addTodo() {
   if (text.value.trim() !== "") {
-    todoData.value.push({ memo: text.value })
-    text.value = ""
+    todoData.value.push({ memo: text.value });
+    text.value = "";
   }
 }
 </script>
@@ -27,7 +27,13 @@ function addTodo() {
 
   <main>
     <div id="todoCreator">
-      <input type="text" v-model="text" name="todoBox" placeholder="Enter your TODO..." @keyup.enter="addTodo" />
+      <input
+        type="text"
+        v-model="text"
+        name="todoBox"
+        placeholder="Enter your TODO..."
+        @keyup.enter="addTodo"
+      />
       <button type="submit" @click="addTodo">Submit</button>
     </div>
 
