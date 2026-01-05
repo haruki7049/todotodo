@@ -76,6 +76,8 @@ function removeTodo(index) {
         name="todoBox"
         placeholder="Enter your TODO..."
         @keydown.enter="addTodo"
+        @compositionstart="isComposing = true"
+        @compositionend="isComposing = false"
       />
       <button type="submit" @click="addTodo">Submit</button>
     </div>
