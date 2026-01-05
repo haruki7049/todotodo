@@ -29,6 +29,12 @@ const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
 </template>
 
 <style scoped>
+@media (prefers-color-scheme: light) {
+  header {
+    background-color: #f9f9f9;
+  }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -40,8 +46,8 @@ header {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f9f9f9;
   cursor: pointer;
+  background-color: #2b2b2b;
   transition: border-color 0.25s;
 }
 
