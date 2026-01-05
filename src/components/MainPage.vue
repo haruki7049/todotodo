@@ -14,6 +14,11 @@ const text = ref("");
 const todoData = ref(jsonData);
 
 function addTodo() {
+  // Prevent submission during IME composition
+  if (event && event.isComposing) {
+    return;
+  }
+
   if (text.value.trim() !== "") {
     todoData.value.push({ memo: text.value });
     text.value = "";
@@ -54,7 +59,7 @@ function removeTodo(index) {
         v-model="text"
         name="todoBox"
         placeholder="Enter your TODO..."
-        @keyup.enter="addTodo"
+        @keydown.enter="addTodo"
       />
       <button type="submit" @click="addTodo">Submit</button>
     </div>
