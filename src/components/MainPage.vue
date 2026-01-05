@@ -47,7 +47,7 @@ function removeTodo(index) {
     </div>
 
     <div id="searchTextBox">
-      <input type="text" name="search" />
+      <input type="text" name="search" placeholder="Search..." />
       <button type="submit">Search</button>
     </div>
   </header>
