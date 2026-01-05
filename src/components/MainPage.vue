@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
+const todoData = ref([]);
 const text = ref("");
 
 function addTodo() {
