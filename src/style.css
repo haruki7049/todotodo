@@ -57,6 +57,23 @@ header input {
   width: 100%;
 }
 
+main ul {
+  display: grid;
+  padding: 0px 30px;
+  gap: 0.5em;
+}
+
+main li {
+  display: block;
+  font-size: 1.5em;
+  padding: 0.25em;
+
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: #404040;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -115,6 +132,9 @@ button:focus-visible {
   }
   button {
     background-color: #d0d0d0;
+  }
+  main li {
+    background-color: #f0f0f0;
   }
   header {
     background-color: #f9f9f9;
