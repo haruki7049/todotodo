@@ -12,12 +12,17 @@ const todoData = ref([{ memo: "HOGEHOGE" }, { memo: "FUGAFUGA" }]);
     </div>
 
     <div id="searchTextBox">
-      <input type="text" id="search" />
+      <input type="text" name="search" />
       <button type="submit">Search</button>
     </div>
   </header>
 
   <main>
+    <div id="todoCreator">
+      <input type="text" name="todoSubmit" />
+      <button type="submit">Submit</button>
+    </div>
+
     <ul>
       <li v-for="item in todoData">
         {{ item.memo }}

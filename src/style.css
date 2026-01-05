@@ -41,20 +41,26 @@ header div#searchTextBox {
   justify-content: start;
 }
 
-header h1 {
+header div#logo h1 {
   margin: 20px;
   font-size: 2em;
 }
 
-header img {
+header div#logo img {
   margin: 20px;
 }
 
-header input {
+header div#searchTextBox input {
   margin: 20px;
   font-size: 18px;
   height: 40px;
   width: 100%;
+}
+
+main div#todoCreator input {
+  margin: 20px;
+  font-size: 18px;
+  height: 40px;
 }
 
 main ul {
