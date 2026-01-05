@@ -4,6 +4,12 @@ import { ref } from "vue";
 let jsonData;
 try {
   jsonData = JSON.parse(localStorage.getItem("todoData"));
+
+  if (!Array.isArray(jsonData)) {
+    console.warn("jsonData is not an array");
+    console.warn("Sets an empty array...");
+    localStorage.setItem("todoData", JSON.stringify([]));
+  }
 } catch (error) {
   console.warn(error);
   console.warn("Sets an empty array...");
